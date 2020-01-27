@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
+  <head lang = "en">
     <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content = "ie-edge"/>
     <title>Joli Holmes</title>
+    <link rel="stylesheet" href="www/main-styles.css">
+    <link rel="stylesheet" href="www/styles.css">
+    <script type="text/javascript" src="js/test.js"></script>
   </head>
   <body>
-    
+    <h1>Joli Holmes Website</h1>
+     <p class = "age">Age <span id = "age-text"></span></p>
+    <h2 class = "city"><span id = "city-text"></span></h2>
+     <p class = "city-text">Houston, TX</p>
+    <div id = "chart">
+      <!-- chart will go here -->
+    </div>
+    <script>
+
+      cities = {"Los Angeles": {name: 'Los Angeles', age: 35.9, index: 0},
+                "San Francisco": {name: 'San Francisco', age: 38.8, index: 1}};
+      
+      document.getElementById("city-text").textContent = cities["San Francisco"].name;
+      document.getElementById("age-text").textContent = cities["San Francisco"].age;
+
+      function updateCity(name) {
+      
+        document.getElementById("city-text").textContent = cities[name].name;
+        document.getElementById("age-text").textContent = cities[name].age;
+      }
+      
+      // const btn = document.getElementById("next-city")
+      
+      //btn.addEventListener('click', function(name, event) {
+      //  let current = parseFloat(event.target.value)
+      //  console.log(current)
+      //})
+      
+    </script>
   </body>
 </html>
   
