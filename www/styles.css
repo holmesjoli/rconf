@@ -1,0 +1,49 @@
+/* Container for the html document 
+https://systemfontstack.com/
+*/
+
+
+html {
+  font-family: var(--fonts);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #466683;
+}
+
+.city {
+  background: #55ebbc;
+}
+
+.age {
+  background: #f6e995; 
+}
+
+#chart {
+  width: 800px;
+  height:250px;
+  border: 2px solid #c0c9cc;
+
+  /* short-hand for 
+  border-width:2px;
+  border-style: solid;
+  border-color: #c0c9cc; 
+  */
+  
+  /* view-port width. Relative and fixed units.
+  width: 30vw; 30 % of the width of the window
+  height: 
+  */
+
+}
+
+/* CSS variables 
+
+ :root {
+   --dark-blue: #466683
+ }
+ 
+ h1 {
+   color: var(--dark-blue);
+ }
+*/
