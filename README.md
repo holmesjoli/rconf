@@ -111,4 +111,61 @@ logo.addEventListener()
 
  - JS it's called a callback
  - Element (logo), Event (click), callback (showCard (which is a function written in JS))
- - 
+ 
+ ### HTML Widgets
+
+ - Widget embeds the data into HTML
+ - NPM is javascripts package manager
+ - package.json is js version of the DESCRIPTION file
+ - commit package-json in your repo
+ - inst is the folder with other things for the package are stored
+ - Let you connect data to JS libraries without having to write a whole JS package
+ - HTML Widgets is the easiest and fastest way to get a Shiny output
+
+### R2D3
+
+ - D3: Data-Driven Documents
+ - Manipulating documents (DOM) based on data
+ - D3 used to build SVGs
+ - r2d3 is an R-package that lets you write D3
+ - Solved annoyances with HTML widgets
+ - r2d3 abstracts it away to focus on writing JS
+ - R2D3 makes life better
+ - hard to get data into a browser because it protects the user
+ - Need a custom interactive visualization takes a lot more code and time
+ - Find examples as a starting point
+  - Observable (RMD/Jupyter of js)
+  - Bl.ocks
+ - Rstudio has a built in D3 script, good for prototyping
+ - Limitations:
+    - You have to supply all the logic
+    - Data is in text
+    - Isolated from the rest of HTML (shadow DOM)
+
+
+### JQuery
+
+ - About 86% of websites use jquery
+ - jQuery let you do a lot of things more easily than you could before
+ - shiny uses jquery
+ - `$`: is jQuery, it's a variable
+ - `-` is also a valid js variable name
+ - jQuery adds extra methods, $ signals use of jQuery to use extra methods
+ - Can write vanilla js with all of shiny, except with events
+ - youmightnotneedjquery.com
+ - youmightnotneedjs.com
+
+### Golem
+ - Software Engineering and R in production
+ - Toolkit for building shiny application for production
+ 
+### Shiny input binding
+
+#### Methods
+ - find: How to find your input elements on the page, gave it a particular class to be able to find it
+ - subscribe: what browser events should trigger an update from your input
+ - getRatePolicy: how often should shiny send updates back to the server, browser events range in how often they have updates. event triggers callback to browswer. Don't want everything to trigger a callback.
+ - getValue: what is the value of the input
+ - receiveMessage: let the input receive messages from the server
+ - setValue: update HTML from the server
+ - When you customize a method/object add an underscore

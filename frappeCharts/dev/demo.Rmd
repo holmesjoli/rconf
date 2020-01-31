@@ -1,0 +1,77 @@
+---
+title: html widgets
+output: js4shiny::html_document_plain
+---
+<script src="https://unpkg.com/frappe-charts@1.2.4/dist/frappe-charts.min.iife.js"></script>
+
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, echo = FALSE, eval = FALSE}
+htmltools::tagList(
+                   htmltools::div(id = "chart"),
+                   htmltools::htmlDependency(
+                     name = "frappe-charts",
+                     version = "1.2.4",
+                     package = "frappeCharts",
+                     src = c(file = "htmlwidgets/lib/frappe-charts/",
+                             href = "https://unpkg.com/frappe-charts@1.2.4/dist/"),
+                     script = "frappe-charts.min.iife.js",
+                     all_files = FALSE
+                   ))
+```
+
+```{r}
+
+data <- list(
+  labels = c("12am-3am", "3am-6pm", "6am-9am", "9am-12am",
+        "12pm-3pm", "3pm-6pm", "6pm-9pm", "9am-12am"),
+  datasets = list(
+              list(
+                name = "Rstudio",
+                type = "bar",
+                values= seq(10, 10, 80),
+              list(
+                name = "Other Conferences",
+                type = "line",
+                values = runif(8)
+              )))
+)
+
+x <- list(
+  opts = list(colors = c("#bad4ed", "466683"),
+              data = data.data,
+              title = "title of chart",
+              type = "axis-mixed",
+              height = 250,
+              isNavigable = TRUE))
+
+frappeCharts::frappeChart(data, elementId = "data")
+
+
+# data <- htmlwidgets:::toJSON(data)
+```
+
+```{r, eval = FALSE}
+tags$script(
+  id = "data",
+  type = "application/json",
+  data
+)
+```
+
+```{js, echo = TRUE, eval = FALSE}
+// let data = document.getElementById("data")
+// data = JSon.parse(data.textContent)
+
+const chart = new frappe.Chart("#chart", {
+    title: data.opts.title,
+    data: data.data,
+    type: data.opts.type,
+    height: data.opts.height,
+    colors: data.opts.colors
+})
+
+```

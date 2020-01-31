@@ -1,0 +1,51 @@
+:root {
+  --black: #001427;
+  --gray: #888997;
+  --white: #e2e2e2;
+  --purple-dark: #383853;
+  --purple: purple;
+  --yellow: #f6e27f;
+  --orange: #f46036;
+  --red: red;
+}
+
+/* black stands, gray rims,
+ * purple sides, dark purple bottoms
+ * white kick drum, yellow cymbols
+ */
+
+.stand {
+  fill: var(--red);
+}
+.rim {}
+.drum-side {
+  fill: var(--purple);
+}
+.drum-bottom {}
+.kick:not(.drum-side) {
+  fill: var(--white)
+}
+.tom-small:not(.drum-side) {
+  fill: var(--white)
+}
+.tom-medium:not(.drum-side) {
+ fill: var(--white)
+}
+
+.symbol {}
+
+
+/* modifier for what you can apply when things are being hovered over*/
+
+.stand:hover,
+.snare:hover,
+.hihat:hover,
+.crash:hover,
+#rim:hover .rimshot,
+#kick:hover .kick,
+#tom-large:hover .tom-large,
+#tom-medium:hover .tom-medium,
+#tom-small:hover .tom-small {
+  fill: var(--orange);
+}
+    

@@ -17,6 +17,8 @@
     <div id = "chart">
       <!-- chart will go here -->
     </div>
+    
+    <button id = "next-city" value = "San Francisco">Switch Cities</button>
     <script>
 
       cities = {"Los Angeles": {name: 'Los Angeles', age: 35.9, index: 0},
@@ -29,14 +31,20 @@
       
         document.getElementById("city-text").textContent = cities[name].name;
         document.getElementById("age-text").textContent = cities[name].age;
+        document.getElementById("next-city").value = cities[name].name;
       }
       
-      // const btn = document.getElementById("next-city")
+      const btn = document.getElementById("next-city")
       
-      //btn.addEventListener('click', function(name, event) {
-      //  let current = parseFloat(event.target.value)
-      //  console.log(current)
-      //})
+      btn.addEventListener('click', function(event) {
+        let current = event.target.value
+        console.log(current)
+        if (current = 'San Francisco') {
+          updateCity('Los Angeles')
+        } else {
+          updateCity('San Francisco')
+        }
+      })
       
     </script>
   </body>
